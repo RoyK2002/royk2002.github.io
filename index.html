@@ -43,13 +43,13 @@
         <a href="#certs">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn" href="assets/Resumen.pdf" download>Download CV</a>
+      <a class="btn" id="download-cv" href="assets/Resumen.pdf">Download CV</a>
     </aside>
 
     <main class="content">
       <section id="about">
         <h1>Turning Data into Practical Solutions</h1>
-        <p>BCA graduate pursuing postgraduate studies in Artificial Intelligence and Machine Learning at Fanshawe College. More than 10 months of hands‑on experience in cybersecurity and cloud computing. Adept at Python, ML frameworks, and visualization. Passionate about applying AI/ML to real-world problems and eager to secure a Data Science Internship (Jan 2026).</p>
+        <p>BCA graduate pursuing postgraduate studies in Artificial Intelligence and Machine Learning at Fanshawe College. More than 10 months of hands-on experience in cybersecurity and cloud computing. Adept at Python, ML frameworks, and visualization. Passionate about applying AI/ML to real-world problems and eager to secure a Data Science Internship (Jan 2026).</p>
       </section>
 
       <section id="education" class="section">
@@ -68,18 +68,18 @@
         <div class="card">
           <div class="kicker">Security • PyTorch • SecML</div>
           <strong>Adversarial ML Labs</strong>
-          <p>Implemented PGD-L2 and FGSM evasion attacks on MNIST; evaluated robustness and crafted label‑flip poisoning scenarios with reproducible loops and accuracy tracking.</p>
+          <p>Implemented PGD-L2 and FGSM evasion attacks on MNIST; evaluated robustness and crafted label-flip poisoning scenarios with reproducible loops and accuracy tracking.</p>
         </div>
         <div class="card">
           <div class="kicker">Deep Learning • CNN</div>
           <strong>CNN Image Classifier — Rock-Paper-Scissors</strong>
-<p>Trained a CNN with regularization and hyperparameter tuning. <a style="color:#3b82f6;text-decoration:underline" target="_blank" href="https://github.com/RoyK2002/rock-paper-scissors-deep-learning.git">View GitHub Repository</a></p>
+          <p>Trained a CNN with regularization and hyperparameter tuning. <a style="color:#3b82f6;text-decoration:underline" target="_blank" href="https://github.com/RoyK2002/rock-paper-scissors-deep-learning.git">View GitHub Repository</a></p>
         </div>
       </section>
 
-      <section id=\"experience\" class=\"section\">
+      <section id="experience" class="section">
         <h2>Experience</h2>
-        <div class=\"item\">
+        <div class="item">
           <strong>Cyber Security Analyst Intern — Adaptive Cyber Labs</strong> (Trivandrum, India) · Jul 2023 – Apr 2024
           <ul>
             <li>Analyzed security systems through audits and assessments to identify potential vulnerabilities.</li>
@@ -90,7 +90,7 @@
             <li>Maintained detailed documentation of protocols, incidents, and remediation steps.</li>
           </ul>
         </div>
-        <div class=\"item\">
+        <div class="item">
           <strong>Cloud Computing Intern — SkillVertex</strong> (Kochi, India) · Oct 2021 – Nov 2021
           <ul>
             <li>Created and deployed a website using AWS EC2 console, configuring a production-style environment.</li>
@@ -100,7 +100,7 @@
             <li>Implemented cloud-based solutions and learned industry best practices.</li>
           </ul>
         </div>
-        <div class=\"item\">
+        <div class="item">
           <strong>Volunteer — London Food Bank</strong> · 2025
           <ul>
             <li>Sorted and labeled bulk rice into smaller packets for organized distribution to individuals and families.</li>
@@ -109,7 +109,7 @@
         </div>
       </section>
 
-      <section id=\"skills\" class="section">
+      <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="card">
           <p><strong>Machine Learning & Python Tools:</strong> Logistic Regression, Gradient Boosting, MLP, SVR, Lasso, Ridge, ElasticNet, Pandas, NumPy, scikit-learn</p>
@@ -131,16 +131,40 @@
         <div class="item"><strong>Email:</strong> <a href="mailto:r_kurien@fanshaweonline.ca">r_kurien@fanshaweonline.ca</a></div>
         <div class="item"><strong>Phone:</strong> <a href="tel:+14373227520">+1 437 322 7520</a></div>
         <div class="item"><strong>LinkedIn:</strong> <a target="_blank" href="https://www.linkedin.com/in/roy-kurien-512619265">linkedin.com/in/roy-kurien-512619265</a></div>
-        <div class="item"><strong>GitHub:</strong> <a target="_blank" href="https://github.com/RoyK2002/rock-paper-scissors-deep-learning.git">github.com/RoyK2002</a></div>
+        <div class="item"><strong>GitHub:</strong> <a target="_blank" href="https://github.com/RoyK2002">github.com/RoyK2002</a></div>
         <div class="item"><strong>Location:</strong> London, ON</div>
         <p class="footer">© <span id="year"></span> Roy Kurien</p>
       </section>
     </main>
   </div>
+
+  <!-- ✅ One clean script block -->
   <script>
-    const y=document.getElementById('year');
-    y.textContent=new Date().getFullYear();
+    // Year updater
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Force download CV
+    const btn = document.getElementById('download-cv');
+    btn?.addEventListener('click', async function (e) {
+      e.preventDefault();
+      try {
+        const resp = await fetch(this.href, { cache: 'no-store' });
+        if (!resp.ok) throw new Error('Network response was not ok');
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Roy_Kurien_CV.pdf';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        // fallback if download fails
+        window.location.href = this.href;
+      }
+    });
   </script>
 </body>
 </html>
-
