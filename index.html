@@ -186,74 +186,62 @@
     </div>
   </footer>
 
-  <script>
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+ <script>
+  // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Portfolio data (edit this list)
-    const PROJECTS = [
-      {
-        title: 'Weather Forecast ML (Classification & Regression)',
-        desc: 'Predict rainfall (classification) and humidity (regression); models: Logistic Regression, Gradient Boosting, MLP, SVR.',
-        stack: ['Python','Pandas','scikit-learn','MLP','GBM'],
-        code: 'https://github.com/royk2002/weather-forecast-ml',
-        demo: '',
-      },
-      {
-        title: 'CNN: MNIST + Data Augmentation',
-        desc: 'Two CNNs: baseline vs augmented (rotation/shift/zoom). Compared accuracy, precision, recall, F1.',
-        stack: ['TensorFlow/Keras','CNN','Augmentation'],
-        code: 'https://github.com/royk2002/cnn-mnist-augmentation',
-        demo: '',
-      },
-      {
-        title: 'RAG-style Chatbot (digitalstaff.ca)',
-        desc: 'Retrieval-augmented answers with relevance guard + IP-based rate limiting; admin tools for unblocking.',
-        stack: ['Node.js','OpenAI API','RAG','Security'],
-        code: 'https://github.com/royk2002/rag-chatbot-digitalstaff',
-        demo: '',
-      },
-      {
-        title: 'Adversarial ML Labs (SecML)',
-        desc: 'PGD/FGSM evasion + label-flip poisoning on MNIST; robustness evaluation and discussion.',
-        stack: ['PyTorch','SecML','PGD','FGSM'],
-        code: 'https://github.com/royk2002/advml-secml-labs',
-        demo: '',
-      },
-      {
-        title: 'Power BI Weather Dashboard',
-        desc: 'Interactive dashboard with OpenWeather API and historical trends; insights and KPIs.',
-        stack: ['Power BI','Python','APIs'],
-        code: 'https://github.com/royk2002/powerbi-weather-dashboard',
-        demo: '',
-      },
-      {
-        title: 'Flask Image Resize Playground',
-        desc: 'Visualize resizing (nearest/linear/cubic/lanczos) with a small demo image; education-focused.',
-        stack: ['Flask','OpenCV','Pillow'],
-        code: 'https://github.com/royk2002/flask-resize-playground',
-        demo: '',
-      },
-    ];
+  // Portfolio data (only the 4 selected projects)
+  const PROJECTS = [
+    {
+      title: 'Weather Forecast ML (Classification & Regression)',
+      desc: 'Predict rainfall (classification) and humidity (regression); models: Logistic Regression, Gradient Boosting, MLP, SVR.',
+      stack: ['Python', 'Pandas', 'scikit-learn', 'MLP', 'GBM'],
+      code: 'https://github.com/royk2002/weather-forecast-ml',
+      demo: '',
+    },
+    {
+      title: 'Adversarial ML Labs (SecML)',
+      desc: 'PGD/FGSM evasion + label-flip poisoning on MNIST; robustness evaluation and discussion.',
+      stack: ['PyTorch', 'SecML', 'PGD', 'FGSM'],
+      code: 'https://github.com/royk2002/advml-secml-labs',
+      demo: '',
+    },
+    {
+      title: 'CNN: MNIST + Data Augmentation',
+      desc: 'Two CNNs: baseline vs augmented (rotation/shift/zoom). Compared accuracy, precision, recall, and F1-score.',
+      stack: ['TensorFlow/Keras', 'CNN', 'Augmentation'],
+      code: 'https://github.com/royk2002/cnn-mnist-augmentation',
+      demo: '',
+    },
+    {
+      title: 'CNN: Rock Paper Scissors',
+      desc: 'Trained CNN model for Rock-Paper-Scissors image classification using transfer learning and real-time testing.',
+      stack: ['PyTorch', 'CNN', 'Image Classification'],
+      code: 'https://github.com/royk2002/cnn-rock-paper-scissors',
+      demo: '',
+    },
+  ];
 
-    // Render project cards
-    const grid = document.getElementById('project-grid');
-    function tag(t){
-      return `<span class="inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80">${t}</span>`;
-    }
-    function card({title, desc, stack, code, demo}){
-      return `
-        <article class="p-5 rounded-2xl border border-white/10 glass flex flex-col">
-          <h3 class="font-semibold text-white">${title}</h3>
-          <p class="text-sm text-white/75 mt-2">${desc}</p>
-          <div class="mt-3 flex flex-wrap gap-2">${stack.map(tag).join('')}</div>
-          <div class="mt-4 flex gap-3">
-            ${code ? `<a class="underline text-sm" href="${code}" target="_blank" rel="noopener noreferrer">Code</a>` : ''}
-            ${demo ? `<a class="underline text-sm" href="${demo}" target="_blank" rel="noopener noreferrer">Demo</a>` : ''}
-          </div>
-        </article>`;
-    }
-    grid.innerHTML = PROJECTS.map(card).join('');
-  </script>
+  // Render project cards
+  const grid = document.getElementById('project-grid');
+  function tag(t) {
+    return `<span class="inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80">${t}</span>`;
+  }
+  function card({ title, desc, stack, code, demo }) {
+    return `
+      <article class="p-5 rounded-2xl border border-white/10 glass flex flex-col">
+        <h3 class="font-semibold text-white">${title}</h3>
+        <p class="text-sm text-white/75 mt-2">${desc}</p>
+        <div class="mt-3 flex flex-wrap gap-2">${stack.map(tag).join('')}</div>
+        <div class="mt-4 flex gap-3">
+          ${code ? `<a class="underline text-sm" href="${code}" target="_blank" rel="noopener noreferrer">Code</a>` : ''}
+          ${demo ? `<a class="underline text-sm" href="${demo}" target="_blank" rel="noopener noreferrer">Demo</a>` : ''}
+        </div>
+      </article>`;
+  }
+  grid.innerHTML = PROJECTS.map(card).join('');
+</script>
+
 </body>
 </html>
+
