@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roy Kurien — Portfolio</title>
+  <title>Roy Kurien — AI/ML Portfolio</title>
   <meta name="description" content="Roy Kurien — AI/ML student and data science intern candidate. Projects in ML, deep learning, adversarial ML, and visualization. Based in London, ON." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,263 +11,242 @@
   <meta name="theme-color" content="#0b0e14" />
   <link rel="canonical" href="https://royk2002.github.io/" />
   <!-- Open Graph -->
-  <meta property="og:title" content="Roy Kurien — Portfolio" />
-  <meta property="og:description" content="AI/ML student • Data Science — projects, experience, and contact." />
+  <meta property="og:title" content="Roy Kurien — AI/ML Portfolio" />
+  <meta property="og:description" content="Projects in ML, DL, adversarial ML, and visualization." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://royk2002.github.io/" />
-  <!-- JSON-LD Person Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Roy Kurien",
-    "jobTitle": "AI/ML Student",
-    "address": {"@type": "PostalAddress", "addressLocality": "London", "addressRegion": "ON", "addressCountry": "CA"},
-    "email": "mailto:roykurien2002@gmail.com",
-    "url": "https://royk2002.github.io/",
-    "sameAs": [
-      "https://www.linkedin.com/in/roy-kurien-512619265",
-      "https://github.com/RoyK2002"
-    ]
-  }
-  </script>
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/000000?v=4" />
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --bg: #0b0e14; --panel:#0f131a; --muted:#a9b4c0; --card:#0c1117; --border:#1b2430; --text:#e7edf5;
-      --brand-a:#7c3aed; --brand-b:#2563eb; --ok:#22c55e; --link:#3b82f6; --focus:#8b5cf6;
-      --shadow: 0 8px 30px rgba(0,0,0,.35);
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7f9fc; --panel:#ffffff; --muted:#4b5563; --card:#ffffff; --border:#e5e7eb; --text:#0b1220; --link:#1d4ed8 }
-      body { background:#f7f9fc }
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
-    a{text-decoration:none;color:inherit}
-    a[href^="#"]:focus-visible{outline:2px solid var(--focus); outline-offset:4px; border-radius:8px}
-
-    .wrap{display:grid;grid-template-columns:320px 1fr;min-height:100vh;max-width:1200px;margin:0 auto}
-    .sidebar{background:var(--panel);padding:28px;border-right:1px solid var(--border);position:sticky;top:0;height:100vh}
-    .name{font-size:28px;font-weight:800}
-    .role{color:var(--muted);margin-bottom:12px}
-    .nav{display:grid;gap:8px;margin:24px 0}
-    .nav a{padding:10px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:#cfd6de}
-    .nav a:hover{border-color:#2a3341}
-    .nav a[aria-current="page"]{outline:2px solid #2a3341}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--brand-a),var(--brand-b));color:#fff;font-weight:700;box-shadow:var(--shadow)}
-    .content{padding:32px}
-    h1{font-size:40px;margin:0 0 12px}
-    h2{margin:0 0 12px}
-    .section{margin:36px 0}
-    .card,.item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
-    .kicker{color:var(--ok);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .tags{margin-top:8px}
-    .tag{display:inline-block;padding:6px 10px;margin:2px 4px 0 0;border-radius:999px;border:1px solid var(--border);font-size:12px;color:#cbd3db}
-    .footer{margin-top:40px;color:var(--muted);font-size:12px}
-    .meta{color:var(--muted);font-size:14px}
-    .list{padding-left:18px;margin:8px 0}
-    .list li{margin:6px 0}
-    .grid{display:grid;gap:14px}
-    .grid.projects{grid-template-columns:repeat( auto-fit, minmax(260px,1fr) )}
-
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:16px;top:16px;width:auto;height:auto;background:#111827;color:#fff;padding:8px 12px;border-radius:10px;z-index:1000}
-
-    @media (max-width: 980px){
-      .wrap{grid-template-columns:1fr}
-      .sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);text-align:center}
-    }
-
-    /* Print-friendly */
-    @media print{
-      .sidebar{display:none}
-      .content{padding:0}
-      a.btn{display:none}
-      .card,.item{break-inside:avoid}
-    }
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, 'Apple Color Emoji','Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.04); }
+    .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 24px 24px; }
+    .tag { @apply inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80; }
   </style>
 </head>
-<body>
-  <a class="skip" href="#about">Skip to content</a>
-  <div class="wrap">
-    <aside class="sidebar" aria-label="Sidebar">
-      <div class="name">Roy Kurien</div>
-      <div class="role">AI/ML Student • Data Science</div>
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
+<body class="bg-[#0b0e14] text-white/90">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight">RK • Portfolio</a>
+      <nav class="hidden sm:flex gap-6 text-sm">
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
       </nav>
-      <a class="btn" id="download-cv" href="assets/Resumen.pdf">Download CV</a>
-    </aside>
+      <a href="#contact" class="sm:hidden text-sm underline">Contact</a>
+    </div>
+  </header>
 
-    <main class="content" id="main">
-      <section id="about" aria-labelledby="about-h">
-        <h1 id="about-h">Turning Data into Practical Solutions</h1>
-        <p class="meta">BCA graduate pursuing postgraduate studies in Artificial Intelligence and Machine Learning at Fanshawe College. More than 10 months of hands-on experience in cybersecurity and cloud computing. Adept at Python, ML frameworks, and visualization. Passionate about applying AI/ML to real-world problems and eager to secure a Data Science Internship (Jan 2026).</p>
-    </section>
-
-      <section id="education" class="section" aria-labelledby="edu-h">
-        <h2 id="edu-h">Education</h2>
-        <div class="grid">
-          <div class="item"><strong>Fanshawe College</strong> — Postgraduate in Artificial Intelligence & Machine Learning <span class="meta">(2025–Present)</span></div>
-          <div class="item"><strong>St. Aloysius College (Autonomous)</strong> — Bachelor of Computer Applications <span class="meta">(2021–2023)</span></div>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/30 via-transparent to-transparent"></div>
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="tag">AI/ML Student</span>
+            <span class="tag">Data Science Intern Candidate</span>
+            <span class="tag">London, ON</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            Hi, I’m <span class="text-white">Roy Kurien</span>.
+          </h1>
+          <p class="mt-4 text-white/70 max-w-prose">
+            I build practical machine learning projects—classification, regression, CNNs, and adversarial ML—
+            and turn them into end‑to‑end demos with clean code, clear write‑ups, and visualizations.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="./assets/Roy_Kurien_Resume.pdf" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90">Resume</a>
+            <a href="#projects" class="px-4 py-2 rounded-2xl glass border border-white/10 hover:border-white/30">See Projects</a>
+            <a href="mailto:roy.kurien.ai@gmail.com" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">Email me</a>
+          </div>
+          <div class="mt-6 flex gap-4 text-white/70">
+            <a class="underline" href="https://github.com/royk2002" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="underline" href="https://www.linkedin.com/in/roy-kurien" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="underline" href="https://royk2002.github.io/" target="_blank" rel="noreferrer">Website</a>
+          </div>
         </div>
-      </section>
-
-      <section id="projects" class="section" aria-labelledby="proj-h">
-        <h2 id="proj-h">Projects</h2>
-        <div class="grid projects">
-          <article class="card" aria-labelledby="p1-t">
-            <div class="kicker">ML • scikit-learn • Power BI</div>
-            <h3 id="p1-t">Weather Forecasting ML Pipeline</h3>
-            <p>Built classification and regression models (Lasso, Ridge, Elastic Net, Gradient Boosting, SVR, MLP) to predict humidity and rain. Visualized results using Power BI and Matplotlib.</p>
-          </article>
-          <article class="card" aria-labelledby="p2-t">
-            <div class="kicker">Security • PyTorch • SecML</div>
-            <h3 id="p2-t">Adversarial ML Labs</h3>
-            <p>Implemented PGD-L2 and FGSM evasion attacks on MNIST; evaluated robustness and crafted label-flip poisoning scenarios with reproducible loops and accuracy tracking.</p>
-          </article>
-          <article class="card" aria-labelledby="p3-t">
-            <div class="kicker">Deep Learning • CNN</div>
-            <h3 id="p3-t">CNN Image Classifier — Rock‑Paper‑Scissors</h3>
-            <p>Trained a CNN with regularization and hyperparameter tuning. <a style="color:var(--link);text-decoration:underline" target="_blank" rel="noopener" href="https://github.com/RoyK2002/rock-paper-scissors-deep-learning">View GitHub Repository</a></p>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" class="section" aria-labelledby="exp-h">
-        <h2 id="exp-h">Experience</h2>
-        <article class="item" aria-labelledby="e1-h">
-          <h3 id="e1-h">Cyber Security Analyst Intern — Adaptive Cyber Labs</h3>
-          <p class="meta">Trivandrum, India · Jul 2023 – Apr 2024</p>
-          <ul class="list">
-            <li>Analyzed security systems through audits and assessments to identify potential vulnerabilities.</li>
-            <li>Implemented solutions by recommending security protocol improvements to mitigate risks.</li>
-            <li>Assisted in incident response, ensuring quick resolution and minimal business impact.</li>
-            <li>Performed risk assessments to identify and rectify weaknesses in security systems.</li>
-            <li>Monitored real-time alerts on DefenceScout and worked with senior analysts to investigate threats.</li>
-            <li>Maintained detailed documentation of protocols, incidents, and remediation steps.</li>
+        <div class="bg-grid rounded-3xl border border-white/10 p-6 glass">
+          <h3 class="font-semibold mb-3">Quick Stats</h3>
+          <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">10+</span> ML/DL projects</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">Python</span> • PyTorch • TF/Keras</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">RAG</span> + Guardrails basics</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">Dashboards</span> with Power BI & Streamlit</li>
           </ul>
-        </article>
-        <article class="item" aria-labelledby="e2-h">
-          <h3 id="e2-h">Cloud Computing Intern — SkillVertex</h3>
-          <p class="meta">Kochi, India · Oct 2021 – Nov 2021</p>
-          <ul class="list">
-            <li>Created and deployed a website using AWS EC2 console, configuring a production-style environment.</li>
-            <li>Gained hands-on experience with AWS EC2 for hosting websites and applications.</li>
-            <li>Configured and managed Windows virtual machines for web hosting.</li>
-            <li>Collaborated with team members to troubleshoot and resolve hosting issues.</li>
-            <li>Implemented cloud-based solutions and learned industry best practices.</li>
-          </ul>
-        </article>
-        <article class="item" aria-labelledby="e3-h">
-          <h3 id="e3-h">Volunteer — London Food Bank</h3>
-          <p class="meta">2025</p>
-          <ul class="list">
-            <li>Sorted and labeled bulk rice into smaller packets for organized distribution to individuals and families.</li>
-            <li>Contributed as part of a volunteer team during Season 9 and 10 to improve community food access.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="skills" class="section" aria-labelledby="skills-h">
-        <h2 id="skills-h">Skills</h2>
-        <div class="card">
-          <p><strong>Machine Learning & Python Tools:</strong> Logistic Regression, Gradient Boosting, MLP, SVR, Lasso, Ridge, ElasticNet, Pandas, NumPy, scikit-learn</p>
-          <p><strong>Evaluation & Visualization:</strong> Accuracy, MSE, MAE, Matplotlib, Power BI</p>
-          <p><strong>Other Technical Skills:</strong> HTML, CSS, JavaScript, SQL, Cloud & Cybersecurity basics</p>
-          <p><strong>Soft Skills:</strong> Problem-solving, fast learning, communication</p>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section id="certs" class="section" aria-labelledby="certs-h">
-        <h2 id="certs-h">Certifications</h2>
-        <div class="grid">
-          <div class="item">Health and Safety Certificate — Fanshawe College <span class="meta">(2025)</span></div>
-          <div class="item">Certification in Data Science — NextGenPro Innovations & Edupark Pvt. Ltd <span class="meta">(2024)</span></div>
-          <div class="item">Google Data Analytics Foundation — Coursera <span class="meta">(2024)</span></div>
+  <!-- Projects -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="flex items-end justify-between gap-4 mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">Selected Projects</h2>
+      <a class="text-sm underline text-white/70 hover:text-white" href="https://github.com/royk2002?tab=repositories" target="_blank" rel="noreferrer">All repos →</a>
+    </div>
+    <div id="project-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Experience & Education</h2>
+    <div class="space-y-6">
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Fanshawe College — Postgraduate (AI & ML)</h3>
+          <span class="text-sm text-white/60">2024–2025</span>
         </div>
-      </section>
+        <p class="text-white/75 mt-2">Projects in ML/DL, NLP, adversarial ML (SecML PGD/FGSM/poisoning), data viz, and full‑stack demos.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">AI/ML Projects & Internships</h3>
+          <span class="text-sm text-white/60">Ongoing</span>
+        </div>
+        <p class="text-white/75 mt-2">Built CNNs (MNIST, transfer learning), RAG‑style chatbot with retrieval + relevance guard, and Power BI dashboards.</p>
+      </div>
+    </div>
+  </section>
 
-      <section id="contact" class="section" aria-labelledby="contact-h">
-        <h2 id="contact-h">Contact</h2>
- <div class="item"><strong>Email:</strong><br>
-  <a href="mailto:r_kurien@fanshaweonline.ca">r_kurien@fanshaweonline.ca</a><br>
-  <a href="mailto:roykurien2002@gmail.com">roykurien2002@gmail.com</a><br>
-  <button class="copy-email" data-email="r_kurien@fanshaweonline.ca" aria-label="Copy Fanshawe email">Copy</button>
-  <button class="copy-email" data-email="roykurien2002@gmail.com" aria-label="Copy Gmail">Copy</button>
-</div>
-        <div class="item"><strong>Phone:</strong> <a href="tel:+14373227520">+1 437 322 7520</a></div>
-        <div class="item"><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/roy-kurien-512619265">linkedin.com/in/roy-kurien-512619265</a></div>
-        <div class="item"><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/RoyK2002">github.com/RoyK2002</a></div>
-        <div class="item"><strong>Location:</strong> London, ON</div>
-        <p class="footer">© <span id="year"></span> Roy Kurien</p>
-      </section>
-    </main>
-  </div>
+  <!-- Skills -->
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6">Skills</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Core</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Python • NumPy • Pandas</li>
+          <li>Scikit‑learn • Matplotlib</li>
+          <li>PyTorch • TensorFlow/Keras</li>
+        </ul>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Applied</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Classification • Regression • CNNs</li>
+          <li>RAG basics • Guardrails</li>
+          <li>Adversarial ML (PGD/FGSM/poisoning)</li>
+        </ul>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Tools</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Git/GitHub • VS Code</li>
+          <li>Power BI • Streamlit</li>
+          <li>SQL/SQLite • Node.js basics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold">Let’s work together</h2>
+        <p class="text-white/75 mt-3 max-w-prose">I’m seeking a Co‑op/Internship in AI/ML or Data Science starting this term. I can contribute as an ML engineer, data analyst, or research assistant.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:roy.kurien.ai@gmail.com" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90">Email</a>
+          <a href="https://www.linkedin.com/in/roy-kurien" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">LinkedIn</a>
+        </div>
+      </div>
+      <div class="p-6 rounded-3xl border border-white/10 glass">
+        <h3 class="font-semibold">Quick Info</h3>
+        <ul class="mt-3 text-sm text-white/75 space-y-2">
+          <li>Location: London, Ontario, Canada</li>
+          <li>Open to: Hybrid/On‑site • Junior roles</li>
+          <li>Resume: <a class="underline" href="./assets/Roy_Kurien_Resume.pdf">Download PDF</a></li>
+          <li>GitHub: <a class="underline" href="https://github.com/royk2002" target="_blank" rel="noreferrer">@royk2002</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-white/60 flex flex-wrap items-center justify-between gap-2">
+      <p>© <span id="year"></span> Roy Kurien</p>
+      <div class="flex gap-4">
+        <a class="underline" href="#projects">Projects</a>
+        <a class="underline" href="#skills">Skills</a>
+        <a class="underline" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Respect reduced motion
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(prefersReduced){ document.documentElement.style.scrollBehavior = 'auto'; }
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Year updater
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
+    // Minimal portfolio data (edit this list)
+    const PROJECTS = [
+      {
+        title: 'Weather Forecast ML (Classification & Regression)',
+        desc: 'Predict rainfall (classification) and humidity (regression); models: Logistic Regression, Gradient Boosting, MLP, SVR.',
+        stack: ['Python','Pandas','scikit‑learn','MLP','GBM'],
+        code: 'https://github.com/royk2002/weather-forecast-ml',
+        demo: '',
+      },
+      {
+        title: 'CNN: MNIST + Data Augmentation',
+        desc: 'Two CNNs: baseline vs augmented (rotation/shift/zoom). Compared accuracy, precision, recall, F1.',
+        stack: ['TensorFlow/Keras','CNN','Augmentation'],
+        code: 'https://github.com/royk2002/cnn-mnist-augmentation',
+        demo: '',
+      },
+      {
+        title: 'RAG‑style Chatbot (digitalstaff.ca)',
+        desc: 'Retrieval‑augmented answers with relevance guard + IP‑based rate limiting; admin tools for unblocking.',
+        stack: ['Node.js','OpenAI API','RAG','Security'],
+        code: 'https://github.com/royk2002/rag-chatbot-digitalstaff',
+        demo: '',
+      },
+      {
+        title: 'Adversarial ML Labs (SecML)',
+        desc: 'PGD/FGSM evasion + label‑flip poisoning on MNIST; robustness evaluation and discussion.',
+        stack: ['PyTorch','SecML','PGD','FGSM'],
+        code: 'https://github.com/royk2002/advml-secml-labs',
+        demo: '',
+      },
+      {
+        title: 'Power BI Weather Dashboard',
+        desc: 'Interactive dashboard with OpenWeather API and historical trends; insights and KPIs.',
+        stack: ['Power BI','Python','APIs'],
+        code: 'https://github.com/royk2002/powerbi-weather-dashboard',
+        demo: '',
+      },
+      {
+        title: 'Flask Image Resize Playground',
+        desc: 'Visualize resizing (nearest/linear/cubic/lanczos) with a small demo image; education‑focused.',
+        stack: ['Flask','OpenCV','Pillow'],
+        code: 'https://github.com/royk2002/flask-resize-playground',
+        demo: '',
+      },
+    ];
 
-    // CV download with graceful fallback
-    const btn = document.getElementById('download-cv');
-    btn?.addEventListener('click', async function (e) {
-      e.preventDefault();
-      try {
-        const resp = await fetch(this.href, { cache: 'no-store' });
-        if (!resp.ok) throw new Error('Network response was not ok');
-        const blob = await resp.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Roy_Kurien_CV.pdf';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      } catch (err) {
-        // Fallback: rely on browser default
-        const a = document.createElement('a');
-        a.href = this.href;
-        a.setAttribute('download','Roy_Kurien_CV.pdf');
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      }
-    });
-
-    // Highlight current section in sidebar
-    const navLinks = Array.from(document.querySelectorAll('.nav a'));
-    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        const id = entry.target.getAttribute('id');
-        const link = navLinks.find(a=>a.getAttribute('href') === `#${id}`);
-        if(link){ link.setAttribute('aria-current', entry.isIntersecting ? 'page' : 'false'); }
-      })
-    },{ rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
-    sections.forEach(s=> io.observe(s));
-      // Copy-to-clipboard for email addresses
-    document.addEventListener('click', async (e)=>{
-      const btn = e.target.closest('.copy-email');
-      if(!btn) return;
-      try{ await navigator.clipboard.writeText(btn.dataset.email); btn.textContent = 'Copied!'; setTimeout(()=>btn.textContent='Copy', 1200); }
-      catch{ btn.textContent = 'Copy failed'; setTimeout(()=>btn.textContent='Copy', 1200); }
-    });
+    // Render project cards
+    const grid = document.getElementById('project-grid');
+    function tag(t){
+      return `<span class=\"tag\">${t}</span>`;
+    }
+    function card({title, desc, stack, code, demo}){
+      return `
+        <article class=\"p-5 rounded-2xl border border-white/10 glass flex flex-col\">
+          <h3 class=\"font-semibold text-white\">${title}</h3>
+          <p class=\"text-sm text-white/75 mt-2\">${desc}</p>
+          <div class=\"mt-3 flex flex-wrap gap-2\">${stack.map(tag).join('')}</div>
+          <div class=\"mt-4 flex gap-3\">
+            ${code ? `<a class=\"underline text-sm\" href=\"${code}\" target=\"_blank\" rel=\"noreferrer\">Code</a>` : ''}
+            ${demo ? `<a class=\"underline text-sm\" href=\"${demo}\" target=\"_blank\" rel=\"noreferrer\">Demo</a>` : ''}
+          </div>
+        </article>`;
+    }
+    grid.innerHTML = PROJECTS.map(card).join('');
   </script>
 </body>
 </html>
-
