@@ -24,7 +24,7 @@
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, 'Apple Color Emoji','Segoe UI Emoji'; }
     .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.04); }
     .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 24px 24px; }
-    .tag { /* if Tailwind JIT is not available, this is purely decorative */ }
+    .tag { /* Tailwind @apply is fine if using JIT; we inline styles via classes elsewhere */ }
   </style>
 </head>
 <body class="bg-[#0b0e14] text-white/90">
@@ -64,7 +64,7 @@
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="./assets/Resumen.pdf" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in a new tab">Resume</a>
             <a href="#projects" class="px-4 py-2 rounded-2xl glass border border-white/10 hover:border-white/30">See Projects</a>
-            <!-- EMAIL BUTTONS (fixed) -->
+            <!-- EMAIL BUTTONS (mailto anchors for reliability) -->
             <a href="mailto:roykurien2002@gmail.com" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">Email (Personal)</a>
             <a href="mailto:r_kurien@fanshaweonline.ca" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">Email (Fanshawe)</a>
           </div>
