@@ -1,4 +1,192 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roy Kurien — AI/ML Portfolio</title>
+  <meta name="description" content="Roy Kurien — AI/ML student and data science intern candidate. Projects in ML, deep learning, adversarial ML, and visualization. Based in London, ON." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0b0e14" />
+  <link rel="canonical" href="https://royk2002.github.io/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Roy Kurien — AI/ML Portfolio" />
+  <meta property="og:description" content="Projects in ML, DL, adversarial ML, and visualization." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://royk2002.github.io/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/000000?v=4" />
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, 'Apple Color Emoji','Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.04); }
+    .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 24px 24px; }
+    .tag { /* Tailwind @apply is fine if using JIT; we inline styles via classes elsewhere */ }
+  </style>
+</head>
+<body class="bg-[#0b0e14] text-white/90">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight">RK • Portfolio</a>
+      <nav class="hidden sm:flex gap-6 text-sm">
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <a href="#contact" class="sm:hidden text-sm underline">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <!-- keep this behind content so clicks work -->
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-b from-indigo-900/30 via-transparent to-transparent"></div>
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80">AI/ML Student</span>
+            <span class="inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80">Data Science Intern Candidate</span>
+            <span class="inline-flex items-center rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/80">London, ON</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            Hi, I’m <span class="text-white">Roy Kurien</span>.
+          </h1>
+          <p class="mt-4 text-white/70 max-w-prose">
+            I build practical machine learning projects—classification, regression, CNNs, and adversarial ML—
+            and turn them into end-to-end demos with clean code, clear write-ups, and visualizations.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="./assets/Resumen.pdf" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in a new tab">Resume</a>
+            <a href="#projects" class="px-4 py-2 rounded-2xl glass border border-white/10 hover:border-white/30">See Projects</a>
+            <!-- EMAIL BUTTONS (mailto anchors for reliability) -->
+            <a href="mailto:roykurien2002@gmail.com" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">Email (Personal)</a>
+            <a href="mailto:r_kurien@fanshaweonline.ca" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">Email (Fanshawe)</a>
+          </div>
+          <div class="mt-6 flex gap-4 text-white/70">
+            <a class="underline" href="https://github.com/royk2002" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="underline" href="https://www.linkedin.com/in/roy-kurien-512619265" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="underline" href="https://royk2002.github.io/" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+        </div>
+        <div class="bg-grid rounded-3xl border border-white/10 p-6 glass">
+          <h3 class="font-semibold mb-3">Quick Stats</h3>
+          <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">10+</span> ML/DL projects</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">Python</span> • PyTorch • TF/Keras</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">RAG</span> + Guardrails basics</li>
+            <li class="rounded-xl border border-white/10 p-3"><span class="text-white font-semibold">Dashboards</span> with Power BI & Streamlit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="flex items-end justify-between gap-4 mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">Selected Projects</h2>
+      <a class="text-sm underline text-white/70 hover:text-white" href="https://github.com/royk2002?tab=repositories" target="_blank" rel="noopener noreferrer">All repos →</a>
+    </div>
+    <div id="project-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Experience & Education</h2>
+    <div class="space-y-6">
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Fanshawe College — Postgraduate (AI & ML)</h3>
+          <span class="text-sm text-white/60">2024–2025</span>
+        </div>
+        <p class="text-white/75 mt-2">Projects in ML/DL, NLP, adversarial ML (SecML PGD/FGSM/poisoning), data viz, and full-stack demos.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">AI/ML Projects & Internships</h3>
+          <span class="text-sm text-white/60">Ongoing</span>
+        </div>
+        <p class="text-white/75 mt-2">Built CNNs (MNIST, transfer learning), RAG-style chatbot with retrieval + relevance guard, and Power BI dashboards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6">Skills</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Core</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Python • NumPy • Pandas</li>
+          <li>Scikit-learn • Matplotlib</li>
+          <li>PyTorch • TensorFlow/Keras</li>
+        </ul>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Applied</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Classification • Regression • CNNs</li>
+          <li>RAG basics • Guardrails</li>
+          <li>Adversarial ML (PGD/FGSM/poisoning)</li>
+        </ul>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 glass">
+        <h3 class="font-semibold">Tools</h3>
+        <ul class="mt-2 space-y-1 text-white/75 text-sm">
+          <li>Git/GitHub • VS Code</li>
+          <li>Power BI • Streamlit</li>
+          <li>SQL/SQLite • Node.js basics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-16 border-t border-white/5">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold">Let’s work together</h2>
+        <p class="text-white/75 mt-3 max-w-prose">I’m seeking a Co-op/Internship in AI/ML or Data Science starting this term. I can contribute as an ML engineer, data analyst, or research assistant.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:roykurien2002@gmail.com" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90">Email (Personal)</a>
+          <a href="mailto:r_kurien@fanshaweonline.ca" class="px-4 py-2 rounded-2xl bg-white text-black font-medium hover:bg-white/90">Email (Fanshawe)</a>
+          <a href="https://www.linkedin.com/in/roy-kurien-512619265" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-2xl border border-white/20 hover:border-white/40">LinkedIn</a>
+        </div>
+      </div>
+      <div class="p-6 rounded-3xl border border-white/10 glass">
+        <h3 class="font-semibold">Quick Info</h3>
+        <ul class="mt-3 text-sm text-white/75 space-y-2">
+          <li>Location: London, Ontario, Canada</li>
+          <li>Open to: Hybrid/On-site • Junior roles</li>
+          <li>Resume: <a class="underline" href="./assets/Resumen.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></li>
+          <li>GitHub: <a class="underline" href="https://github.com/royk2002" target="_blank" rel="noopener noreferrer">@royk2002</a></li>
+          <li>Email (Personal): <a class="underline" href="mailto:roykurien2002@gmail.com">roykurien2002@gmail.com</a></li>
+          <li>Email (Fanshawe): <a class="underline" href="mailto:r_kurien@fanshaweonline.ca">r_kurien@fanshaweonline.ca</a></li>
+          <li>LinkedIn: <a class="underline" href="https://www.linkedin.com/in/roy-kurien-512619265" target="_blank" rel="noopener noreferrer">roy-kurien-512619265</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-white/60 flex flex-wrap items-center justify-between gap-2">
+      <p>© <span id="year"></span> Roy Kurien</p>
+      <div class="flex gap-4">
+        <a class="underline" href="#projects">Projects</a>
+        <a class="underline" href="#skills">Skills</a>
+        <a class="underline" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
   // Dynamic year
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -53,3 +241,6 @@
   }
   grid.innerHTML = PROJECTS.map(card).join('');
 </script>
+
+</body>
+</html>
